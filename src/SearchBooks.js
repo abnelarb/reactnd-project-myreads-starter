@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./App.css"
 import * as BooksAPI from './BooksAPI'
 import Book from './Book'
+import PropTypes from 'prop-types';
 class SearchBooks extends Component {
   state = {
     query: '',
@@ -24,7 +25,7 @@ class SearchBooks extends Component {
           this.clearQuery();
         } else {
           this.setState({ results: results })
-          console.log(results)
+          // console.log(results)
         }
       })
     } else {
@@ -54,7 +55,6 @@ class SearchBooks extends Component {
               let shelf = "none"
               this.props.books.forEach(book => {
                 if (book.id !== result.id) {
-                  result.shelf = "none"
                 } else {
                   shelf = book.shelf
                 }
@@ -63,7 +63,7 @@ class SearchBooks extends Component {
                 <div key={result.id} className="book">
                   <Book
                     key={result.id}
-                    shelf={result.shelf}
+                    shelf={shelf}
                     book={result}
                     moveShelf={moveShelf} />
 
@@ -78,5 +78,7 @@ class SearchBooks extends Component {
     );
   }
 }
-
+SearchBooks.protoTypes = {
+  moveShelf: PropTypes.func.isRequired,
+}
 export default SearchBooks;
