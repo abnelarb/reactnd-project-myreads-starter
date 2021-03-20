@@ -49,8 +49,8 @@ body, .app {
 
 .open-search {
   position: fixed;
-  right: 25px;
-  bottom: 25px;
+  right: 100px;
+  bottom: 100px;
 }
 
 .open-search button {
@@ -195,4 +195,15 @@ button:active {
   padding: 20px 10px 0;
   text-align: center;
   font-size: 0.8em;
+}
+.footer{
+  margin-top: .25rem;
+  padding: .25rem;
+  background-color: rgb(0, 102, 0);
+  color:#eee;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
 }
